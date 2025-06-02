@@ -129,7 +129,7 @@ const Comparison = () => {
         {Array.from({ length: 20 }).map((_, i) => (
           <div
             key={i}
-            className="particle absolute w-1 h-1 bg-white/20 rounded-full"
+            className="particle absolute w-1 h-1 bg-white/20 rounded-full animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -287,17 +287,6 @@ const Comparison = () => {
           </motion.button>
         </motion.div>
       </div>
-
-      <style jsx>{`
-        .particle {
-          animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(180deg); }
-        }
-      `}</style>
     </section>
   );
 };

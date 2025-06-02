@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { gsap } from 'gsap';
@@ -10,6 +9,7 @@ import WhoIHelp from '../components/WhoIHelp';
 import About from '../components/About';
 import Services from '../components/Services';
 import Process from '../components/Process';
+import Comparison from '../components/Comparison';
 import Results from '../components/Results';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
