@@ -38,61 +38,95 @@ const CardCarousel = () => {
   }, []);
 
   return (
-    <section className="py-20 overflow-hidden">
-      <div className="mb-12 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Client Success Stories</h2>
-        <p className="text-xl text-[#e4ded7]/80">Real results from real creators</p>
-      </div>
+    <section className="py-20 overflow-hidden relative">
+      {/* Background Texture for Section */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-30"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.025) 0%, transparent 50%),
+            repeating-linear-gradient(
+              0deg,
+              transparent,
+              transparent 1px,
+              rgba(255, 255, 255, 0.01) 1px,
+              rgba(255, 255, 255, 0.01) 2px
+            )
+          `,
+          backgroundSize: '400px 400px, 300px 300px, 50px 50px'
+        }}
+      />
 
-      {/* Infinite Carousel */}
-      <div className="relative">
-        <div 
-          ref={carouselRef}
-          className="flex gap-5"
-          style={{ width: `${cards.length * 320 * 2}px` }}
-        >
-          {/* Duplicate cards for seamless loop */}
-          {[...cards, ...cards].map((card, index) => (
-            <motion.div
-              key={`${card.id}-${index}`}
-              className="group min-w-[300px] h-[400px] relative rounded-2xl overflow-hidden cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              onHoverStart={() => {
-                gsap.to(statsRef.current, {
-                  opacity: 0,
-                  y: 20,
-                  duration: 0.3,
-                  onComplete: () => {
-                    if (statsRef.current) {
-                      statsRef.current.textContent = card.stat;
-                    }
-                    gsap.to(statsRef.current, {
-                      opacity: 1,
-                      y: 0,
-                      duration: 0.3
-                    });
-                  }
-                });
-              }}
-            >
-              <img 
-                src={card.image} 
-                alt={`Client ${card.id}`}
-                className="w-full h-full object-cover transition-all duration-300 group-hover:invert"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </motion.div>
-          ))}
+      <div className="relative z-10">
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Client Success Stories</h2>
+          <p className="text-xl text-[#e4ded7]/80">Real results from real creators</p>
         </div>
-      </div>
 
-      {/* Dynamic Stats */}
-      <div className="text-center mt-12">
-        <div 
-          ref={statsRef}
-          className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
-        >
-          Hover over cards to see results
+        {/* Infinite Carousel */}
+        <div className="relative">
+          <div 
+            ref={carouselRef}
+            className="flex gap-5"
+            style={{ width: `${cards.length * 320 * 2}px` }}
+          >
+            {/* Duplicate cards for seamless loop */}
+            {[...cards, ...cards].map((card, index) => (
+              <motion.div
+                key={`${card.id}-${index}`}
+                className="group min-w-[300px] h-[400px] relative rounded-2xl overflow-hidden cursor-pointer border border-white/10"
+                whileHover={{ scale: 1.05 }}
+                onHoverStart={() => {
+                  gsap.to(statsRef.current, {
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.3,
+                    onComplete: () => {
+                      if (statsRef.current) {
+                        statsRef.current.textContent = card.stat;
+                      }
+                      gsap.to(statsRef.current, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.3
+                      });
+                    }
+                  });
+                }}
+              >
+                <img 
+                  src={card.image} 
+                  alt={`Client ${card.id}`}
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-0 group-hover:contrast-200"
+                />
+                
+                {/* Black overlay on hover */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
+                
+                {/* White border glow on hover */}
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-white/30 rounded-2xl transition-all duration-500"></div>
+                
+                {/* Content overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                  <div className="text-white">
+                    <div className="text-lg font-semibold">Success Story</div>
+                    <div className="text-sm opacity-80">Hover to see results</div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Dynamic Stats */}
+        <div className="text-center mt-12">
+          <div 
+            ref={statsRef}
+            className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent"
+          >
+            Hover over cards to see results
+          </div>
         </div>
       </div>
     </section>
