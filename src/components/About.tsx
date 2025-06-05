@@ -86,6 +86,12 @@ const About = () => {
                 </div>
                 <div className="text-sm text-[#e4ded7]/60">Revenue Generated</div>
               </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold">
+                  <span className="counter" data-target="100">0</span>M+
+                </div>
+                <div className="text-sm text-[#e4ded7]/60">Views Generated</div>
+              </div>
             </motion.div>
           </motion.div>
 

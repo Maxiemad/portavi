@@ -95,7 +95,7 @@ const Hero = () => {
             Book your free audit
           </motion.a>
           <motion.a
-            href="https://calendly.com"
+            href="https://calendly.com/avi-jcurvebyavi/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 border border-[#e4ded7] rounded-full hover:bg-[#e4ded7] hover:text-[#0e1016] transition-all duration-300"

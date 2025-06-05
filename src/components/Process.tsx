@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -45,8 +44,23 @@ const Process = () => {
         </motion.div>
 
         <div className="relative">
-          {/* Connection Line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transform -translate-y-1/2"></div>
+          {/* Curved Connection Line */}
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 transform -translate-y-1/2">
+            <svg width="100%" height="100%" viewBox="0 0 1000 100" preserveAspectRatio="none">
+              <path
+                d="M0,50 C250,0 750,100 1000,50"
+                stroke="url(#gradient)"
+                strokeWidth="2"
+                fill="none"
+              />
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style={{ stopColor: '#2563eb', stopOpacity: 1 }} />
+                  <stop offset="100%" style={{ stopColor: '#9333ea', stopOpacity: 1 }} />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
@@ -82,9 +96,6 @@ const Process = () => {
                     {step.description}
                   </p>
                 </motion.div>
-
-                {/* Connection dot for timeline */}
-                <div className="hidden lg:block absolute top-1/2 left-1/2 w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-20"></div>
               </motion.div>
             ))}
           </div>

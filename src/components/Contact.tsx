@@ -75,7 +75,7 @@ const Contact = () => {
                   <div>
                     <p className="font-medium">Email</p>
                     <p className="text-[#e4ded7]/80 group-hover:text-blue-400 transition-colors duration-300">
-                      contact@jcurvebyavi.com
+                    avi@jcurvebyavi.com
                     </p>
                   </div>
                 </motion.div>
@@ -90,7 +90,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium">Location</p>
-                    <p className="text-[#e4ded7]/80">Serving clients across the US</p>
+                    <p className="text-[#e4ded7]/80">Serving clients across worldwide </p>
                   </div>
                 </motion.div>
               </div>
@@ -101,7 +101,9 @@ const Contact = () => {
               <h4 className="text-lg font-medium mb-4">Follow Us</h4>
               <div className="flex space-x-4">
                 <motion.a
-                  href="#"
+                  href="https://www.instagram.com/avisaidso/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
                   whileHover={{ scale: 1.7, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
@@ -113,6 +115,9 @@ const Contact = () => {
                   <Instagram className="w-6 h-6 text-white" />
                 </motion.a>
                 <motion.a
+                 href="https://www.linkedin.com/in/avi-sharma-766918163/"
+                 target="_blank"
+                 rel="noopener noreferrer"
                   href="#"
                   className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
                   whileHover={{ scale: 1.7, rotate: 5 }}

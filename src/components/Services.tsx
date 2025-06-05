@@ -6,32 +6,32 @@ const services = [
   {
     title: "Instagram & YouTube Management",
     description: "Done-for-you content calendars, posting, growth, and engagement.",
-    cta: "Learn more"
+    
   },
   {
     title: "Viral Short-Form Video Editing",
     description: "Reels, Shorts, TikToks that build brand & bring leads.",
-    cta: "Learn more"
+    
   },
   {
     title: "Personal Branding Strategy",
     description: "Positioning you as a category leader in your niche.",
-    cta: "Learn more"
+    
   },
   {
     title: "Content Scripting & Copywriting",
     description: "Hooks, captions, CTAs — all engineered to convert.",
-    cta: "Learn more"
+    
   },
   {
     title: "Digital Strategy & Consulting",
     description: "Weekly reviews, monthly reports, and high-conversion systems.",
-    cta: "Learn more"
+    
   },
   {
     title: "Account Audits",
     description: "Comprehensive review of your social presence with actionable recommendations.",
-    cta: "Learn more"
+    
   }
 ];
 
