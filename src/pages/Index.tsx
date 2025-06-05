@@ -37,29 +37,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-[#0e1016] text-[#e4ded7] overflow-x-hidden relative">
-      {/* Background Texture */}
+      {/* Simplified Background Texture */}
       <div 
-        className="fixed inset-0 pointer-events-none z-0"
+        className="fixed inset-0 pointer-events-none z-0 opacity-20"
         style={{
           backgroundImage: `
-            radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
-            radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.015) 0%, transparent 50%),
-            repeating-linear-gradient(
-              45deg,
-              transparent,
-              transparent 2px,
-              rgba(255, 255, 255, 0.008) 2px,
-              rgba(255, 255, 255, 0.008) 4px
-            ),
-            repeating-linear-gradient(
-              -45deg,
-              transparent,
-              transparent 2px,
-              rgba(255, 255, 255, 0.005) 2px,
-              rgba(255, 255, 255, 0.005) 4px
-            )
+            radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.03) 0%, transparent 50%)
           `,
-          backgroundSize: '200px 200px, 300px 300px, 20px 20px, 20px 20px'
+          backgroundSize: '400px 400px, 600px 600px'
         }}
       />
       
@@ -77,6 +63,7 @@ const Index = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
+            className="relative z-20"
           >
             <Hero />
             <CardCarousel />
