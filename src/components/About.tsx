@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
@@ -58,13 +57,10 @@ const About = () => {
             viewport={{ once: true }}
           >
             <div className="relative">
-              {/* Custom shadow behind image */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded-[32px] blur-2xl transform translate-x-4 translate-y-4"></div>
-              
               <img
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=500&h=600&fit=crop"
+                src="/Screenshot_2025-05-29_at_9.02.17_PM-removebg-preview.png"
                 alt="Avi Sharma"
-                className="relative rounded-[32px] w-full h-[500px] object-cover grayscale hover:grayscale-0 transition-all duration-300 border border-[#e4ded7]/20"
+                className="relative rounded-[32px] w-full h-[500px] object-cover transition-all duration-300"
                 data-blobity-tooltip="Avi Sharma"
               />
             </div>
@@ -80,7 +76,7 @@ const About = () => {
             >
               <div className="text-center">
                 <div className="text-3xl font-bold">
-                  <span className="counter" data-target="10">0</span>K+
+                  <span className="counter" data-target="10">0</span>+
                 </div>
                 <div className="text-sm text-[#e4ded7]/60">Clients</div>
               </div>
@@ -101,7 +97,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold">About Avi Sharma</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">Hey, I’m Avi</h2>
             
             <motion.div
               className="space-y-4 text-lg text-[#e4ded7]/80 leading-relaxed"
@@ -111,13 +107,19 @@ const About = () => {
               viewport={{ once: true }}
             >
               <p>
-                With over a decade of experience in business strategy and entrepreneurship, I've helped hundreds of business owners and freelancers achieve exponential growth.
+              The guy behind J Curve by Avi. Over the past 4+ years, I’ve helped 10+ brands grow faster, smarter, and more profitably through a mix of organic and performance marketing. 
               </p>
               <p>
-                My approach combines data-driven strategies with practical implementation, ensuring that every client not only understands what to do but actually does it.
+              From scaling content to 100M+ views to driving over $500K in client revenue, I’ve seen what works (and what doesn’t). 
               </p>
               <p>
-                From zero to seven figures, I've been there. Let me show you the shortcuts and help you avoid the costly mistakes I made along the way.
+              J Curve isn’t just a name - it’s the philosophy I live by: short-term effort, long-term explosive growth. What drives me? 
+              </p>
+              <p>
+              Building things that matter, solving real marketing problems, and helping brands stop guessing and start growing.
+              </p>
+              <p>
+              If that sounds like the kind of growth you’re after - let’s build your curve.
               </p>
             </motion.div>
           </motion.div>

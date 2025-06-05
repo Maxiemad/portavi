@@ -93,7 +93,7 @@ const CardCarousel = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Client Success Stories
+            Our Clients
           </motion.h2>
           <motion.p 
             className="text-xl text-[#e4ded7]/80 mb-8"
@@ -147,9 +147,7 @@ const CardCarousel = () => {
                   />
                   
                   {/* Success Label Overlay - Persistent Color */}
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-emerald-500 to-teal-400 text-black text-sm font-bold px-3 py-1 rounded-full z-20">
-                    Success Story
-                  </div>
+                  
                 </div>
                 
                 {/* Text Below Image */}
@@ -174,7 +172,7 @@ const CardCarousel = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <div className="text-lg text-[#e4ded7]/70">
-            Hover over any success story to see the transformation
+            
           </div>
         </motion.div>
       </div>
