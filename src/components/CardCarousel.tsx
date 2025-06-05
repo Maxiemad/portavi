@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
@@ -7,59 +6,63 @@ import { Instagram, Linkedin, Youtube } from 'lucide-react';
 const cards = [
   { 
     id: 1, 
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop", 
-    clientName: "Sarah Martinez",
-    impact: "Revenue Boosted 3x",
-    stat: "3M+ followers on IG" 
+    image: "/Screenshot 2025-06-05 at 5.02.54 PM.png", 
+    clientName: "Aleena Rais",
+    impact: "4M+ subscribers on YouTube", 
+    stat: "1.4M+ followers on Instagram" 
   },
   { 
     id: 2, 
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop", 
-    clientName: "Tech Solutions Co",
-    impact: "Lead Gen Up 500%",
-    stat: "1M+ YouTube subscribers" 
+    image: "/Screenshot 2025-06-05 at 5.12.17 PM.png", 
+    clientName: "Shwetabh Gangwar",
+    impact: "2M+ subscribers on YouTube",
+    stat: "1M+ followers on Instagram" 
   },
   { 
     id: 3, 
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop", 
-    clientName: "Elite Fitness",
-    impact: "Community Grew 10x",
-    stat: "500K+ TikTok views" 
+    image: "/Screenshot 2025-06-05 at 6.46.21 PM.png", 
+    clientName: "Aditi Goyal",
+    stat: "1M+ followers on Instagram" 
   },
   { 
     id: 4, 
-    image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&h=300&fit=crop", 
-    clientName: "Digital Nomad Hub",
-    impact: "Engagement Rate 95%",
-    stat: "75K+ newsletter subs" 
+    image: "/Screenshot 2025-06-05 at 5.25.14 PM.png", 
+    clientName: "Vijay Chandola",
+    impact: "540k+ followers on Instagram",
+    stat: "81.5K+ followers on LindedIn" 
   },
   { 
     id: 5, 
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=300&fit=crop", 
-    clientName: "Luxury Lifestyle",
-    impact: "Brand Deals +200%",
-    stat: "2.5M+ impressions" 
+    image: "/Screenshot 2025-06-05 at 5.32.01 PM.png", 
+    clientName: "Hyperkey",
+    impact: "US based business"
   },
   { 
     id: 6, 
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop", 
-    clientName: "Wellness Coach",
-    impact: "Course Sales $500K+",
-    stat: "$500K+ revenue" 
+    image: "/Screenshot 2025-06-05 at 5.34.06 PM.png", 
+    clientName: "Soundarya Balasubramani",
+    impact: "100k+ followers on LinkedIn",
+    stat: "100k+ followers on Instagram"  
   },
   { 
     id: 7, 
-    image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop", 
-    clientName: "Food & Travel Blog",
-    impact: "Sponsorship ROI 400%",
-    stat: "95% engagement rate" 
+    image: "/Screenshot 2025-06-05 at 6.48.10 PM.png", 
+    clientName: "Unshackled",
+    impact: "US based business",
+   
   },
   { 
     id: 8, 
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop", 
-    clientName: "Business Mentor",
-    impact: "Authority Built Fast",
-    stat: "10X growth rate" 
+    image: "/Screenshot 2025-06-05 at 6.50.37 PM.png", 
+    clientName: "Propques",
+    impact: "Real Estate company in India",
+    
+  },
+  { 
+    id: 9, 
+    image: "/Screenshot 2025-06-05 at 6.53.05 PM.png", 
+    clientName: "Ministry of Arts",
+    
   }
 ];
 
@@ -112,12 +115,24 @@ const CardCarousel = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <span className="text-[#e4ded7]/90">Ready to Work:</span>
-            <Instagram 
-              className="w-6 h-6 text-pink-500 transition-transform duration-300 hover:scale-110 hover:rotate-3 cursor-pointer" 
-            />
-            <Linkedin 
-              className="w-6 h-6 text-blue-400 transition-transform duration-300 hover:scale-110 hover:rotate-3 cursor-pointer" 
-            />
+            <a 
+              href="https://www.instagram.com/avisaidso/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Instagram 
+                className="w-6 h-6 text-pink-500 transition-transform duration-300 hover:scale-110 hover:rotate-3 cursor-pointer" 
+              />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/avi-sharma-766918163/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Linkedin 
+                className="w-6 h-6 text-blue-400 transition-transform duration-300 hover:scale-110 hover:rotate-3 cursor-pointer" 
+              />
+            </a>
             
           </motion.div>
         </div>
@@ -155,9 +170,16 @@ const CardCarousel = () => {
                   <div className="text-lg font-semibold text-white mb-1">
                     {card.clientName}
                   </div>
-                  <div className="text-base bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 bg-clip-text text-transparent font-medium">
-                    {card.impact}
-                  </div>
+                  {card.impact && (
+                    <div className="text-base bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 bg-clip-text text-transparent font-medium mb-1">
+                      {card.impact}
+                    </div>
+                  )}
+                  {card.stat && (
+                    <div className="text-base text-[#e4ded7]/80">
+                      {card.stat}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}

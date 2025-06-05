@@ -83,6 +83,23 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA Button */}
+        <motion.div 
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+          >
+            Book your free 30 min consultancy
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );

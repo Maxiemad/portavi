@@ -4,40 +4,39 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    name: "Sabrina Lee",
-    role: "Wellness Coach",
-    content: "Working with JCurve transformed our brand. The growth was exponential and the strategy was elite.",
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=100&h=100&fit=crop&crop=face"
+    name: "Aleena Rais",
+    role: "Educator",
+    content: "Avi just got what we were trying to do. He didn’t throw generic strategies at us — he listened, asked the right questions, and came back with a plan that actually worked. It finally felt like our brand had direction.",
+    image: "/Screenshot 2025-06-05 at 5.02.54 PM.png"
   },
   {
-    name: "James R.",
-    role: "Content Creator", 
-    content: "We saw our audience double in weeks. Their insights and storytelling are top-notch.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&h=100&fit=crop&crop=face"
+    name: "Aditi Goyal",
+    role: "Food Entrepreneur", 
+    content: "Honestly, working with J Curve felt like I finally had a teammate who cared as much as I did. Avi’s ideas were sharp, his execution was clean, and he never made me feel like I was just another project.",
+    image: "/Screenshot 2025-06-05 at 6.46.21 PM.png"
   },
   {
-    name: "Neha Varma",
-    role: "Tech Entrepreneur",
-    content: "The most professional and creative team I've collaborated with. Absolute game-changers.",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=100&h=100&fit=crop&crop=face"
+    name: "Shwetabh Gangwar",
+    role: "Author",
+    content: "Before Avi, I was stuck — posting without a plan and hoping something would click. He brought in structure, helped me clean up my messaging, and the results started showing. I finally felt proud of my content again.",
+    image: "/Screenshot 2025-06-05 at 5.12.17 PM.png"
   },
   {
-    name: "Carlos D.",
-    role: "Course Creator",
-    content: "From zero to viral in no time. If you want content that converts—go with JCurve.",
-    image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=100&h=100&fit=crop&crop=face"
+    name: "Vijay Chandola",
+    role: "Product Manager",
+    content: "What stood out for me was how involved Avi was. He wasn’t just giving me tips — he was inside the brand, tweaking things, testing what worked, and always keeping me in the loop. Super hands-on.",
+    image: "/Screenshot 2025-06-05 at 5.25.14 PM.png"
   },
   {
-    name: "Maya Singh", 
-    role: "Brand Consultant",
-    content: "Their ability to connect brand vision with content was truly impressive.",
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=100&h=100&fit=crop&crop=face"
+    name: "Ministry of Arts", 
+    content: "I used to dread marketing meetings. With Avi, it was different. He made it simple, focused, and honestly… fun. We finally stopped guessing and started growing — and that lifted a huge weight off my shoulders.",
+    image: "/Screenshot 2025-06-05 at 6.53.05 PM.png"
   },
   {
-    name: "Liam O'Connor",
-    role: "Digital Marketer",
-    content: "Analytics-driven, emotionally resonant. A rare combo. 10/10 experience!",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=100&h=100&fit=crop&crop=face"
+    name: "Propques",
+    role: "Real Estate Business",
+    content: "You can tell Avi actually cares. He’s not trying to force some one-size-fits-all playbook. He took time to understand my brand and gave suggestions that felt right — and they worked. That’s rare.",
+    image: "/Screenshot 2025-06-05 at 6.50.37 PM.png"
   }
 ];
 

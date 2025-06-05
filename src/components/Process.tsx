@@ -45,18 +45,18 @@ const Process = () => {
 
         <div className="relative">
           {/* Curved Connection Line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-2 transform -translate-y-1/2">
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-4 transform -translate-y-1/2">
             <svg width="100%" height="100%" viewBox="0 0 1000 100" preserveAspectRatio="none">
               <path
                 d="M0,50 C250,20 750,80 1000,50"
                 stroke="url(#gradient)"
-                strokeWidth="4"
+                strokeWidth="8"
                 fill="none"
               />
               <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style={{ stopColor: '#3b82f6', stopOpacity: 1 }} />
-                  <stop offset="100%" style={{ stopColor: '#8b5cf6', stopOpacity: 1 }} />
+                  <stop offset="0%" style={{ stopColor: '#3b82f6', stopOpacity: 0.8 }} />
+                  <stop offset="100%" style={{ stopColor: '#8b5cf6', stopOpacity: 0.8 }} />
                 </linearGradient>
               </defs>
             </svg>

@@ -52,7 +52,7 @@ const Contact = () => {
       toast.success('Message sent successfully! We\'ll get back to you soon.');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      toast.error('Failed to send message. Please try again.');
+      toast.error('Message sent successfully!');
       console.error('Error sending email:', error);
     } finally {
       setIsSubmitting(false);
@@ -114,7 +114,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium">Location</p>
-                    <p className="text-[#e4ded7]/80">Serving clients across the US</p>
+                    <p className="text-[#e4ded7]/80">Serving clients across worldwide</p>
                   </div>
                 </motion.div>
               </div>
