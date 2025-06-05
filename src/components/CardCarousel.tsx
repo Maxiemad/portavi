@@ -118,9 +118,7 @@ const CardCarousel = () => {
             <Linkedin 
               className="w-6 h-6 text-blue-400 transition-transform duration-300 hover:scale-110 hover:rotate-3 cursor-pointer" 
             />
-            <Youtube 
-              className="w-6 h-6 text-red-500 transition-transform duration-300 hover:scale-110 hover:rotate-3 cursor-pointer" 
-            />
+            
           </motion.div>
         </div>
 

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
@@ -115,10 +114,11 @@ const Hero = () => {
           <div className="space-y-6">
             <h1 
               ref={taglineRef}
-              className="text-5xl md:text-7xl font-bold leading-tight"
+              className="text-4xl md:text-6xl font-bold leading-tight"
               data-cursor="text"
             >
-              Building Brands That Scale
+              Content that Converts<br />
+              Growth that Sticks
             </h1>
             <motion.p 
               className="text-xl md:text-2xl text-[#e4ded7]/80 max-w-2xl"
@@ -126,7 +126,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2, duration: 0.8 }}
             >
-              From strategy to execution, we help entrepreneurs and creators build premium personal brands that generate real revenue.
+              From strategy to execution, we empower entrepreneurs and creators to elevate their online presence, streamline their content, and build premium personal brands that generate real revenue and influence.
             </motion.p>
 
             {/* Stats */}
@@ -139,7 +139,7 @@ const Hero = () => {
             >
               <div>
                 <div className="text-3xl font-bold">
-                  <span className="counter" data-target="500">0</span>K+
+                  <span className="counter" data-target="500">0</span>$K+
                 </div>
                 <div className="text-sm text-[#e4ded7]/60">Revenue Generated</div>
               </div>
