@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Linkedin } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { toast } from 'sonner';
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -18,21 +20,43 @@ const Contact = () => {
     });
   };
 
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form
+    if (!formData.name || !formData.email || !formData.message) {
+      toast.error('Please fill in all fields');
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      toast.error('Please enter a valid email address');
+      return;
+    }
+
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after success message
-    setTimeout(() => {
-      setIsSubmitted(false);
+    try {
+      await emailjs.sendForm(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        formRef.current!,
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+
+      toast.success('Message sent successfully! We\'ll get back to you soon.');
       setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+    } catch (error) {
+      toast.error('Failed to send message. Please try again.');
+      console.error('Error sending email:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -75,7 +99,7 @@ const Contact = () => {
                   <div>
                     <p className="font-medium">Email</p>
                     <p className="text-[#e4ded7]/80 group-hover:text-blue-400 transition-colors duration-300">
-                    avi@jcurvebyavi.com
+                      avi@jcurvebyavi.com
                     </p>
                   </div>
                 </motion.div>
@@ -90,7 +114,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium">Location</p>
-                    <p className="text-[#e4ded7]/80">Serving clients across worldwide </p>
+                    <p className="text-[#e4ded7]/80">Serving clients across the US</p>
                   </div>
                 </motion.div>
               </div>
@@ -115,10 +139,9 @@ const Contact = () => {
                   <Instagram className="w-6 h-6 text-white" />
                 </motion.a>
                 <motion.a
-                 href="https://www.linkedin.com/in/avi-sharma-766918163/"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                  href="#"
+                  href="https://www.linkedin.com/in/avi-sharma-766918163/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
                   whileHover={{ scale: 1.7, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
@@ -141,7 +164,7 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -198,7 +221,7 @@ const Contact = () => {
 
               <motion.button
                 type="submit"
-                disabled={isSubmitting || isSubmitted}
+                disabled={isSubmitting}
                 className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -215,14 +238,6 @@ const Contact = () => {
                   >
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
                     Sending...
-                  </motion.div>
-                ) : isSubmitted ? (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    className="flex items-center justify-center"
-                  >
-                    ✅ Message Sent!
                   </motion.div>
                 ) : (
                   'Book a Discovery Call'

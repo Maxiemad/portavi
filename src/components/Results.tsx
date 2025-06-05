@@ -20,6 +20,24 @@ const results = [
     period: "YouTube Shorts in 7 days",
     description: "Strategic short-form content creation with optimized titles and thumbnails.",
     color: "from-yellow-400 to-orange-400"
+  },
+  {
+    metric: "$500+ Revenue",
+    period: "Generated in 12 Months",
+    description: "Consistent monetization through content strategy, client work, and digital offerings.",
+    color: "from-purple-400 to-pink-400"
+  }
+,{
+  metric: "100+ Comments",
+  period: "Instagram Growth Series",
+  description: "Interactive content with polls, callouts, and timed value drops.",
+  color: "from-indigo-500 to-violet-400"
+},  
+  {
+    metric: "1M+ followers",
+    period: "Reels in 6 months",
+    description: "Interactive content with polls, callouts, and timed value drops.",
+    color: "from-pink-500 to-rose-500"
   }
 ];
 
@@ -34,7 +52,7 @@ const Results = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Results That Speak for Themselves</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Results That Speak</h2>
           <p className="text-xl text-[#e4ded7]/80">Our clients see measurable growth. Here's what we've achieved.</p>
         </motion.div>
 

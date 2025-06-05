@@ -1,16 +1,15 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
 const services = [
   {
     title: "Instagram & YouTube Management",
-    description: "Done-for-you content calendars, posting, growth, and engagement.",
+    description: "Done-for-you content calendars, posting, growth, and engagement."
     
   },
   {
     title: "Viral Short-Form Video Editing",
-    description: "Reels, Shorts, TikToks that build brand & bring leads.",
+    description: "Reels, Shorts, TikToks that build brand & bring leads."
     
   },
   {
@@ -80,16 +79,6 @@ const Services = () => {
                 <p className="text-[#e4ded7]/80 mb-6 leading-relaxed">
                   {service.description}
                 </p>
-                <motion.a
-                  href="#"
-                  className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium group-hover:translate-x-2 transition-transform duration-300"
-                  whileHover={{ x: 5 }}
-                >
-                  {service.cta}
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                  </svg>
-                </motion.a>
               </div>
             </motion.div>
           ))}

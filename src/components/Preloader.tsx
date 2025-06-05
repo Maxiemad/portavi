@@ -65,9 +65,9 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       style={{ height: '100vh' }}
     >
       <div ref={textsRef} className="texts-container text-center">
-        <span className="block text-4xl md:text-6xl font-light mb-4 font-serif">Strategize.</span>
-        <span className="block text-4xl md:text-6xl font-light mb-4 font-serif">Build.</span>
-        <span className="block text-4xl md:text-6xl font-light font-serif">Scale.</span>
+        <span className="block text-4xl md:text-6xl font-light mb-4 font-serif">Strategize</span>
+        <span className="block text-4xl md:text-6xl font-light mb-4 font-serif">Build</span>
+        <span className="block text-4xl md:text-6xl font-light font-serif">Scale</span>
       </div>
     </div>
   );
