@@ -4,41 +4,43 @@ import { motion } from 'framer-motion';
 
 const results = [
   {
-    metric: "2x Reach",
-    period: "in just 3 weeks",
-    description: "Doubled Instagram reach through strategic content planning and hashtag optimization.",
-    color: "from-teal-400 to-cyan-400"
-  },
-  {
-    metric: "30K → 75K",
-    period: "Followers in 4 months", 
-    description: "Consistent growth through optimized content strategy and engagement tactics.",
-    color: "from-blue-400 to-indigo-400"
-  },
-  {
-    metric: "10,000+ Views",
-    period: "YouTube Shorts in 7 days",
-    description: "Strategic short-form content creation with optimized titles and thumbnails.",
-    color: "from-yellow-400 to-orange-400"
-  },
-  {
     metric: "$500+ Revenue",
     period: "Generated in 12 Months",
     description: "Consistent monetization through content strategy, client work, and digital offerings.",
     color: "from-purple-400 to-pink-400"
   }
 ,{
-  metric: "100+ Comments",
-  period: "Instagram Growth Series",
+  metric: "1M+ followers",
+  period: "Instagram in 6 months",
+  description: "Interactive content with polls, callouts, and timed value drops.",
+  color: "from-pink-500 to-rose-500"
+},
+{
+  metric: "10,000+ Views",
+  period: "YouTube Shorts in 7 days",
+  description: "Strategic short-form content creation with optimized titles and thumbnails.",
+  color: "from-yellow-400 to-orange-400"
+},
+  {
+    metric: "2x Reach",
+    period: "in just 3 weeks",
+    description: "Doubled Instagram reach through strategic content planning and hashtag optimization.",
+    color: "from-teal-400 to-cyan-400"
+  },  
+  
+  {
+    metric: "30K → 75K",
+    period: "Followers in 4 months", 
+    description: "Consistent growth through optimized content strategy and engagement tactics.",
+    color: "from-blue-400 to-indigo-400"
+  },
+  
+  {
+  metric: "19.5M+ Reach",
+  period: "Instagram in 6 months",
   description: "Interactive content with polls, callouts, and timed value drops.",
   color: "from-indigo-500 to-violet-400"
-},  
-  {
-    metric: "1M+ followers",
-    period: "Reels in 6 months",
-    description: "Interactive content with polls, callouts, and timed value drops.",
-    color: "from-pink-500 to-rose-500"
-  }
+}
 ];
 
 const Results = () => {

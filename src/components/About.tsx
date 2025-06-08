@@ -46,7 +46,7 @@ const About = () => {
   return (
     <section className="py-20 px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Image Side */}
           <motion.div
             ref={imageRef}
@@ -58,7 +58,7 @@ const About = () => {
           >
             <div className="relative">
               <img
-                src="/Screenshot_2025-05-29_at_9.02.17_PM-removebg-preview.png"
+                src="/IMG_0816-removebg.png"
                 alt="Avi Sharma"
                 className="relative rounded-[32px] w-full h-[500px] object-cover transition-all duration-300"
                 data-blobity-tooltip="Avi Sharma"
@@ -68,7 +68,7 @@ const About = () => {
             {/* Stats below image */}
             <motion.div 
               ref={counterRef}
-              className="flex justify-center gap-8 mt-8"
+              className="flex justify-center gap-8 mt-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -97,35 +97,35 @@ const About = () => {
 
           {/* Content Side */}
           <motion.div
-            className="space-y-6"
+            className="space-y-4 mt-4"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold">Hey, I’m Avi</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Hey, I'm Avi</h2>
             
             <motion.div
-              className="space-y-4 text-lg text-[#e4ded7]/80 leading-relaxed"
+              className="space-y-3 text-lg text-[#e4ded7]/80 leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
               <p>
-              The guy behind J Curve by Avi. Over the past 4+ years, I’ve helped 10+ brands grow faster, smarter, and more profitably through a mix of organic and performance marketing. 
+              The guy behind J Curve by Avi. Over the past 4+ years, I've helped 10+ brands grow faster, smarter, and more profitably through a mix of organic and performance marketing. 
               </p>
               <p>
-              From scaling content to 100M+ views to driving over $500K in client revenue, I’ve seen what works (and what doesn’t). 
+              From scaling content to 100M+ views to driving over $500K in client revenue, I've seen what works (and what doesn't). 
               </p>
               <p>
-              J Curve isn’t just a name - it’s the philosophy I live by: short-term effort, long-term explosive growth. What drives me? 
+              J Curve isn't just a name - it's the philosophy I live by: short-term effort, long-term explosive growth. What drives me? 
               </p>
               <p>
               Building things that matter, solving real marketing problems, and helping brands stop guessing and start growing.
               </p>
               <p>
-              If that sounds like the kind of growth you’re after - let’s build your curve.
+              If that sounds like the kind of growth you're after - let's build your curve.
               </p>
             </motion.div>
           </motion.div>

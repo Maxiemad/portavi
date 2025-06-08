@@ -29,8 +29,9 @@ const testimonials = [
   },
   {
     name: "Ministry of Arts", 
+    role: "Dubai-based EdTech platform",
     content: "I used to dread marketing meetings. With Avi, it was different. He made it simple, focused, and honestly… fun. We finally stopped guessing and started growing — and that lifted a huge weight off my shoulders.",
-    image: "/Screenshot 2025-06-05 at 6.53.05 PM.png"
+    image: "/Screenshot 2025-06-08 at 10.36.15 AM.png"
   },
   {
     name: "Propques",

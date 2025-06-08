@@ -62,7 +62,7 @@ const cards = [
     id: 9, 
     image: "/Screenshot 2025-06-08 at 10.36.15 AM.png", 
     clientName: "Ministry of Arts",
-    impact: "Dubai-based edtech platform",
+    impact: "Dubai-based EdTech platform",
   }
 ];
 
