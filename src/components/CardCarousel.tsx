@@ -104,11 +104,8 @@ const CardCarousel = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-         
           </motion.p>
-
-          {/* Ready to Work Section with Platform Icons */}
-    
+        </div>
 
         {/* Image Trail Carousel */}
         <div className="relative">
@@ -133,9 +130,6 @@ const CardCarousel = () => {
                     alt={card.clientName}
                     className="w-full h-full object-cover"
                   />
-                  
-                  {/* Success Label Overlay - Persistent Color */}
-                  
                 </div>
                 
                 {/* Text Below Image */}
@@ -167,7 +161,6 @@ const CardCarousel = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <div className="text-lg text-[#e4ded7]/70">
-            
           </div>
         </motion.div>
       </div>
