@@ -22,7 +22,7 @@ const cards = [
     id: 3, 
     image: "/Screenshot 2025-06-05 at 6.46.21 PM.png", 
     clientName: "Aditi Goyal",
-    stat: "1M+ followers on Instagram" 
+    impact: "1M+ followers on Instagram" 
   },
   { 
     id: 4, 
@@ -104,38 +104,11 @@ const CardCarousel = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Real results from real creators
+         
           </motion.p>
 
           {/* Ready to Work Section with Platform Icons */}
-          <motion.div 
-            className="flex items-center justify-center gap-3 text-lg"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <span className="text-[#e4ded7]/90">Ready to Work:</span>
-            <a 
-              href="https://www.instagram.com/avisaidso/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <Instagram 
-                className="w-6 h-6 text-pink-500 transition-transform duration-300 hover:scale-110 hover:rotate-3 cursor-pointer" 
-              />
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/avi-sharma-766918163/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <Linkedin 
-                className="w-6 h-6 text-blue-400 transition-transform duration-300 hover:scale-110 hover:rotate-3 cursor-pointer" 
-              />
-            </a>
-            
-          </motion.div>
-        </div>
+    
 
         {/* Image Trail Carousel */}
         <div className="relative">

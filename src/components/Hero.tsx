@@ -139,7 +139,7 @@ const Hero = () => {
             >
               <div>
                 <div className="text-3xl font-bold">
-                  <span className="counter" data-target="500">0</span>$K+
+                $<span className="counter" data-target="500">0</span>K+
                 </div>
                 <div className="text-sm text-[#e4ded7]/60">Revenue Generated</div>
               </div>
