@@ -117,7 +117,7 @@ const Hero = () => {
               className="text-4xl md:text-6xl font-bold leading-tight"
               data-cursor="text"
             >
-              Content that Converts<br />
+              Content that Converts <br />
               Growth that Sticks
             </h1>
             <motion.p 

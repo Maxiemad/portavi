@@ -97,7 +97,7 @@ const Services = () => {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
           >
-            Book your free 30 minutes consultancy
+            Book your Free 30-minutes consultation call
           </motion.button>
         </motion.div>
       </div>

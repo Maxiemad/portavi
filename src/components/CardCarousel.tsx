@@ -29,7 +29,7 @@ const cards = [
     image: "/Screenshot 2025-06-05 at 5.25.14 PM.png", 
     clientName: "Vijay Chandola",
     impact: "700k+ followers on Instagram",
-    stat: "82K+ followers on LindedIn" 
+    stat: "82K+ followers on LinkedIn" 
   },
   { 
     id: 5, 
