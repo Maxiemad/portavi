@@ -28,13 +28,13 @@ const cards = [
     id: 4, 
     image: "/Screenshot 2025-06-05 at 5.25.14 PM.png", 
     clientName: "Vijay Chandola",
-    impact: "540k+ followers on Instagram",
-    stat: "81.5K+ followers on LindedIn" 
+    impact: "700k+ followers on Instagram",
+    stat: "82K+ followers on LindedIn" 
   },
   { 
     id: 5, 
-    image: "/Screenshot 2025-06-05 at 5.32.01 PM.png", 
-    clientName: "Hyperkey",
+    image: "/Screenshot 2025-06-08 at 10.37.38 AM.png", 
+    clientName: "Hyperke",
     impact: "US based business"
   },
   { 
@@ -60,9 +60,9 @@ const cards = [
   },
   { 
     id: 9, 
-    image: "/Screenshot 2025-06-05 at 6.53.05 PM.png", 
+    image: "/Screenshot 2025-06-08 at 10.36.15 AM.png", 
     clientName: "Ministry of Arts",
-    
+    impact: "Dubai-based edtech platform",
   }
 ];
 
