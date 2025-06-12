@@ -7,19 +7,19 @@ const personas = [
     emoji: "👑",
     title: "Influencers",
     subtitle: "with 500k+ followings",
-    backContent: "Helped X influencer build monetization funnels, grew from 100k to 600k in 3 months."
+    backContent: "Helped influencers grow from 200k to 1M in 6 months."
   },
   {
     emoji: "💼",
     title: "Coaches & Course Creators",
     subtitle: "doing 6-figure months",
-    backContent: "Designed course launch strategy that generated $75k in first month."
+    backContent: "Helped launching courses and scaled it to $60k per month in 6 months."
   },
   {
     emoji: "🚀",
     title: "Founders",
     subtitle: "scaling their online presence",
-    backContent: "Built complete brand ecosystem that increased leads by 300% in 60 days."
+    backContent: "Built complete personal brand ecosystem and increased visibility."
   },
   {
     emoji: "🎯",
