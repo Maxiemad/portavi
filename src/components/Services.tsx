@@ -41,8 +41,8 @@ const Services = () => {
         {/* Top Logo */}
         <motion.div 
           className="text-center mb-16"
-          initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
-          whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "back.out(1.7)" }}
           viewport={{ once: true }}
         >
