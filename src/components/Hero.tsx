@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
+import Link from 'next/link';
 
 gsap.registerPlugin(TextPlugin);
 
@@ -85,9 +86,7 @@ const Hero = () => {
         <div className="text-2xl font-serif font-bold">J Curve by Avi</div>
         <div className="flex gap-4">
           <motion.a
-            href="https://forms.google.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact-book"
             className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
