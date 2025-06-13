@@ -94,12 +94,14 @@ const Services = () => {
           viewport={{ once: true }}
         >
           <motion.a
-            href="/contact-book"
+            href="https://calendly.com/avi-jcurvebyavi/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 inline-block"
           >
-            Book your free audit
+            Book your 30 minutes free consultancy
           </motion.a>
         </motion.div>
       </div>
