@@ -122,7 +122,7 @@ const Contact = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-medium mb-4">Follow Us</h4>
+              <h4 className="text-lg font-medium mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <motion.a
                   href="https://www.instagram.com/avisaidso/"

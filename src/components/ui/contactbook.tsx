@@ -142,43 +142,46 @@ const ContactForm = () => {
 
               <motion.div variants={itemVariants}>
                 <Label htmlFor="website" className="text-[#e4ded7] text-sm font-medium mb-2 block">
-                  Website (Optional)
+                  Website *
                 </Label>
                 <Input
                   id="website"
                   type="url"
                   placeholder="https://yourwebsite.com"
-                  {...register('website')}
+                  {...register('website', { required: 'Website is required' })}
                   className="bg-[#0e1016]/50 border-[#e4ded7]/20 text-[#e4ded7] placeholder:text-[#e4ded7]/40 focus:border-[#e4ded7]/50 h-12 rounded-xl"
                 />
+                {errors.website && (
+                  <p className="text-red-400 text-sm mt-1">{errors.website.message}</p>
+                )}
               </motion.div>
 
               <motion.div variants={itemVariants}>
                 <Label htmlFor="socialMedia" className="text-[#e4ded7] text-sm font-medium mb-2 block">
-                  Social Media Link (Optional)
+                  Social Media Link *
                 </Label>
                 <Input
                   id="socialMedia"
                   type="text"
                   placeholder="LinkedIn, Instagram, or other social profile"
-                  {...register('socialMedia')}
+                  {...register('socialMedia', { required: 'Social media link is required' })}
                   className="bg-[#0e1016]/50 border-[#e4ded7]/20 text-[#e4ded7] placeholder:text-[#e4ded7]/40 focus:border-[#e4ded7]/50 h-12 rounded-xl"
                 />
+                {errors.socialMedia && (
+                  <p className="text-red-400 text-sm mt-1">{errors.socialMedia.message}</p>
+                )}
               </motion.div>
 
               <motion.div variants={itemVariants}>
                 <Label htmlFor="otherInfo" className="text-[#e4ded7] text-sm font-medium mb-2 block">
-                  Tell Us More *
+                  Tell Us More (Optional)
                 </Label>
                 <Textarea
                   id="otherInfo"
                   placeholder="Share any additional information about your project, goals, or how we can help you..."
-                  {...register('otherInfo', { required: 'Please share some additional information' })}
+                  {...register('otherInfo')}
                   className="bg-[#0e1016]/50 border-[#e4ded7]/20 text-[#e4ded7] placeholder:text-[#e4ded7]/40 focus:border-[#e4ded7]/50 min-h-[120px] rounded-xl resize-none"
                 />
-                {errors.otherInfo && (
-                  <p className="text-red-400 text-sm mt-1">{errors.otherInfo.message}</p>
-                )}
               </motion.div>
 
               <motion.div variants={itemVariants}>
