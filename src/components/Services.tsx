@@ -74,10 +74,10 @@ const Services = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
               
               <div className="relative z-10">
-                <h3 className="text-xl font-bold mb-4 group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-bold mb-4 group-hover:text-blue-400 transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-[#e4ded7]/80 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-[#e4ded7]/80 mb-6 leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -99,7 +99,7 @@ const Services = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 inline-block"
+            className="px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 inline-block"
           >
            Book your Free 30-minutes consultation call
           </motion.a>

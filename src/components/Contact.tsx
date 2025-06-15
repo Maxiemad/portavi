@@ -69,8 +69,8 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">READY TO WORK TOGETHER?</h2>
-          <p className="text-xl text-[#e4ded7]/80 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">READY TO WORK TOGETHER?</h2>
+          <p className="text-base sm:text-lg md:text-xl text-[#e4ded7]/80 max-w-3xl mx-auto leading-relaxed">
             Let's create content that connects, converts, and compounds. Schedule a discovery call to discuss how we can help you build a premium brand that stands out in your industry.
           </p>
         </motion.div>
