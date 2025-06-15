@@ -83,11 +83,11 @@ const Hero = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
       >
-        <div className="text-xl sm:text-2xl font-serif font-bold">J Curve by Avi</div>
-        <div className="flex gap-2 sm:gap-4">
+        <div className="text-lg sm:text-2xl font-serif font-bold">J Curve by Avi</div>
+        <div className="flex gap-1 sm:gap-4">
           <motion.a
             href="/contact-book"
-            className="px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+            className="px-2 py-1 text-xs sm:px-6 sm:py-3 sm:text-base bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -97,7 +97,7 @@ const Hero = () => {
             href="https://calendly.com/avi-jcurvebyavi/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base border border-[#e4ded7] rounded-full hover:bg-[#e4ded7] hover:text-[#0e1016] transition-all duration-300"
+            className="px-2 py-1 text-xs sm:px-6 sm:py-3 sm:text-base border border-[#e4ded7] rounded-full hover:bg-[#e4ded7] hover:text-[#0e1016] transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -113,7 +113,7 @@ const Hero = () => {
           <div className="space-y-6">
             <h1 
               ref={taglineRef}
-              className="text-4xl md:text-6xl font-bold leading-tight"
+              className="text-3xl md:text-6xl font-bold leading-tight"
               data-cursor="text"
             >
               Content that Converts <br />
