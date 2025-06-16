@@ -107,17 +107,14 @@ const Hero = () => {
           </div>
         </div>
       </motion.nav>
+      <div className="mt-[40px] sm:mt-0"></div>
 
       {/* Main Content */}
       <div className="flex-1 flex items-center px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-7xl mx-auto">
           {/* Left Side - Text */}
           <div className="space-y-6">
-            <h1 
-              ref={taglineRef}
-              className="text-lg sm:text-4xl md:text-6xl font-bold leading-tight"
-              data-cursor="text"
-            >
+            <h1 className="font-bold text-4xl md:text-6xl leading-tight">
               Content that Converts<br />
               Growth that Sticks
             </h1>
