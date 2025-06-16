@@ -78,17 +78,17 @@ const Hero = () => {
     <section className="hero min-h-screen flex flex-col relative overflow-hidden">
       {/* Navigation */}
       <motion.nav 
-        className="flex flex-col w-full mt-[40px] sm:mt-0"
+        className="flex flex-col w-full mt-[40px]"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
       >
         <div className="flex justify-between items-center w-full">
-          <div className="text-sm sm:text-xl font-serif font-bold whitespace-nowrap">J Curve by Avi</div>
-          <div className="flex gap-1 sm:gap-4">
+          <div className="text-sm sm:text-2xl font-serif font-bold whitespace-nowrap sm:ml-[40px]">J Curve by Avi</div>
+          <div className="flex gap-1 sm:gap-6">
             <motion.a
               href="/contact-book"
-              className="px-2 py-1 text-xs sm:px-4 sm:py-2 sm:text-base bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 whitespace-nowrap"
+              className="px-2 py-1 text-xs sm:px-6 sm:py-3 sm:text-xl bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 whitespace-nowrap"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -98,7 +98,7 @@ const Hero = () => {
               href="https://calendly.com/avi-jcurvebyavi/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2 py-1 text-xs sm:px-4 sm:py-2 sm:text-base border border-[#e4ded7] rounded-full hover:bg-[#e4ded7] hover:text-[#0e1016] transition-all duration-300 whitespace-nowrap"
+              className="px-2 py-1 text-xs sm:px-6 sm:py-3 sm:text-xl border border-[#e4ded7] rounded-full hover:bg-[#e4ded7] hover:text-[#0e1016] transition-all duration-300 whitespace-nowrap"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
