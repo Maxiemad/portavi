@@ -115,11 +115,11 @@ const Hero = () => {
           <div className="space-y-6">
             <h1 
               ref={taglineRef}
-              className="flex flex-col sm:block text-2xl sm:text-4xl md:text-6xl font-bold leading-tight max-w-xs sm:max-w-full"
+              className="text-lg sm:text-4xl md:text-6xl font-bold leading-tight"
               data-cursor="text"
             >
-              <span className="flex-none w-full">Content that Converts</span>
-              <span className="flex-none w-full">Growth that Sticks</span>
+              Content that Converts<br />
+              Growth that Sticks
             </h1>
             <motion.p 
               className="text-xl md:text-2xl text-[#e4ded7]/80 max-w-2xl"
