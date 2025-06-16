@@ -114,7 +114,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-7xl mx-auto">
           {/* Left Side - Text */}
           <div className="space-y-6">
-            <h1 className="font-bold text-4xl md:text-6xl leading-tight">
+            <h1 className="font-bold text-xl sm:text-4xl md:text-6xl leading-tight">
               Content that Converts<br />
               Growth that Sticks
             </h1>
