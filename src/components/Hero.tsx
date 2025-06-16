@@ -78,7 +78,7 @@ const Hero = () => {
     <section className="hero min-h-screen flex flex-col relative overflow-hidden">
       {/* Navigation */}
       <motion.nav 
-        className="flex flex-col w-full mt-[40px]"
+        className="flex flex-col w-full mt-[20px] sm:mt-[40px]"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
@@ -115,11 +115,11 @@ const Hero = () => {
           <div className="space-y-6">
             <h1 
               ref={taglineRef}
-              className="text-2xl sm:text-4xl md:text-6xl font-bold leading-tight"
+              className="text-2xl sm:text-4xl md:text-6xl font-bold leading-tight max-w-xs sm:max-w-full"
               data-cursor="text"
             >
-              <span className="block">Content that Converts</span>
-              <span className="block">Growth that Sticks</span>
+              <span className="block w-full">Content that Converts</span>
+              <span className="block w-full">Growth that Sticks</span>
             </h1>
             <motion.p 
               className="text-xl md:text-2xl text-[#e4ded7]/80 max-w-2xl"
