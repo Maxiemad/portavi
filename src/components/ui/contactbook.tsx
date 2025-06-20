@@ -19,6 +19,7 @@ interface FormData {
 
 const ContactForm = () => {
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { toast } = useToast();
   const {
     register,
@@ -29,15 +30,34 @@ const ContactForm = () => {
     mode: 'onChange',
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log('Form submitted:', data);
-    setShowModal(true);
-    
-    // Reset form after submission
-    setTimeout(() => {
-      reset();
-      setShowModal(false);
-    }, 4000);
+  const onSubmit = async (data: FormData) => {
+    setLoading(true);
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbyga0KZz_5e7vocPNmQgf3YJg6w1QKt6YaA9ilcFX0xX0w8FI5Q6VXmnE8y_q95ZKRbWQ/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      setShowModal(true);
+    } catch (error) {
+      toast({
+        title: "Submission failed",
+        description: "There was an error submitting your details. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+      setTimeout(() => {
+        reset();
+        setShowModal(false);
+      }, 4000);
+    }
   };
 
   const containerVariants = {
@@ -191,10 +211,10 @@ const ContactForm = () => {
                 >
                   <Button
                     type="submit"
-                    disabled={!isValid}
+                    disabled={!isValid || loading}
                     className="w-full h-14 bg-[#e4ded7] text-[#0e1016] hover:bg-[#e4ded7]/90 disabled:bg-[#e4ded7]/20 disabled:text-[#e4ded7]/40 font-semibold text-lg rounded-xl transition-all duration-300"
                   >
-                    Submit Details
+                    {loading ? "Submitting..." : "Submit Details"}
                   </Button>
                 </motion.div>
               </motion.div>

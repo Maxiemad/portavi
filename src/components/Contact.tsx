@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Linkedin } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
 
 const Contact = () => {
@@ -42,18 +41,23 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      await emailjs.sendForm(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-        formRef.current!,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbyga0KZz_5e7vocPNmQgf3YJg6w1QKt6YaA9ilcFX0xX0w8FI5Q6VXmnE8y_q95ZKRbWQ/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
       );
 
       toast.success('Message sent successfully! We\'ll get back to you soon.');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      toast.error('Message sent successfully!');
-      console.error('Error sending email:', error);
+      toast.error('There was an error submitting your details. Please try again.');
+      console.error('Error sending to spreadsheet:', error);
     } finally {
       setIsSubmitting(false);
     }
