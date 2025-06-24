@@ -8,13 +8,20 @@ gsap.registerPlugin(TextPlugin);
 
 const YOUTUBE_ID = 'jAc6oGb86Yg';
 
+declare global {
+  interface Window {
+    YT: any;
+    onYouTubeIframeAPIReady: () => void;
+  }
+}
+
 const Hero = () => {
   const taglineRef = useRef<HTMLHeadingElement>(null);
   const videoRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const [audioEnabled, setAudioEnabled] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
-  const playerRef = useRef(null);
+  const playerRef = useRef<any>(null);
 
   useEffect(() => {
     // Animate tagline with split text effect
@@ -79,9 +86,11 @@ const Hero = () => {
     });
 
     // Load YouTube IFrame API
-    const tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    document.body.appendChild(tag);
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.body.appendChild(tag);
+    }
 
     window.onYouTubeIframeAPIReady = () => {
       playerRef.current = new window.YT.Player('ytplayer', {
@@ -92,9 +101,11 @@ const Hero = () => {
           controls: 1,
           loop: 1,
           playlist: YOUTUBE_ID,
+          rel: 0,
+          playsinline: 1,
         },
         events: {
-          onReady: (event) => {
+          onReady: (event: any) => {
             event.target.playVideo();
           },
         },
@@ -114,6 +125,7 @@ const Hero = () => {
     window.addEventListener('mousemove', enableAudio);
     window.addEventListener('click', enableAudio);
     window.addEventListener('scroll', enableAudio);
+
     return () => {
       window.removeEventListener('mousemove', enableAudio);
       window.removeEventListener('click', enableAudio);
@@ -204,8 +216,35 @@ const Hero = () => {
               className="relative group"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-              <div className="relative bg-[#1a1a2e] rounded-2xl p-2 sm:p-4 md:p-8 backdrop-blur-sm border border-[#e4ded7]/20 flex justify-center items-center w-full max-w-[900px] h-56 sm:h-80 md:h-[420px] mx-auto shadow-xl">
-                <div id="ytplayer" className="w-full h-full rounded-xl overflow-hidden" style={{ aspectRatio: '16/9' }}></div>
+              <div
+                className="relative bg-[#1a1a2e] rounded-2xl p-2 sm:p-4 md:p-8 backdrop-blur-sm border border-[#e4ded7]/20 flex justify-center items-center mx-auto shadow-xl"
+                style={{
+                  maxWidth: '1200px',
+                  width: '100%',
+                  aspectRatio: '16/9',
+                  minHeight: '400px',
+                }}
+              >
+                {/* Fallback for older Safari */}
+                <div style={{
+                  position: 'relative',
+                  width: '100%',
+                  paddingBottom: '56.25%', // 16:9
+                  height: 0,
+                }}>
+                  <div
+                    id="ytplayer"
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '16px',
+                      overflow: 'hidden',
+                    }}
+                  ></div>
+                </div>
               </div>
             </div>
           </div>
