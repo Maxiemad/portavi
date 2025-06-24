@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
@@ -10,6 +10,8 @@ const Hero = () => {
   const taglineRef = useRef<HTMLHeadingElement>(null);
   const videoRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
+  const [audioEnabled, setAudioEnabled] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
     // Animate tagline with split text effect
@@ -72,6 +74,22 @@ const Hero = () => {
         }
       );
     });
+
+    // Unmute video on first user interaction (mousemove, scroll, click)
+    const enableAudio = () => {
+      setAudioEnabled(true);
+      window.removeEventListener('mousemove', enableAudio);
+      window.removeEventListener('click', enableAudio);
+      window.removeEventListener('scroll', enableAudio);
+    };
+    window.addEventListener('mousemove', enableAudio);
+    window.addEventListener('click', enableAudio);
+    window.addEventListener('scroll', enableAudio);
+    return () => {
+      window.removeEventListener('mousemove', enableAudio);
+      window.removeEventListener('click', enableAudio);
+      window.removeEventListener('scroll', enableAudio);
+    };
   }, []);
 
   return (
@@ -158,15 +176,16 @@ const Hero = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
               <div className="relative bg-[#1a1a2e] rounded-2xl p-8 backdrop-blur-sm border border-[#e4ded7]/20">
-                <video
+                <iframe
+                  ref={iframeRef}
                   className="w-full h-64 md:h-80 rounded-lg object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-                </video>
+                  style={{ aspectRatio: '16/9' }}
+                  src={`https://www.youtube.com/embed/jAc6oGb86Yg?autoplay=1&mute=${audioEnabled ? '0' : '1'}&loop=1&playlist=jAc6oGb86Yg&playsinline=1&controls=1&rel=0`}
+                  title="J Curve by Avi Intro"
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>
