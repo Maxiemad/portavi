@@ -226,12 +226,15 @@ const Hero = () => {
                   minHeight: '400px',
                 }}
               >
-                <div style={{
-                  position: 'relative',
-                  width: '100%',
-                  paddingBottom: '56.25%', // 16:9
-                  height: 0,
-                }}>
+                <div
+                  className="w-full h-0"
+                  style={{
+                    position: 'relative',
+                    width: '100%',
+                    paddingBottom: '56.25%', // 16:9
+                    height: 0,
+                  }}
+                >
                   {!play && (
                     <button
                       onClick={() => setPlay(true)}
@@ -258,7 +261,7 @@ const Hero = () => {
                       }}
                     >
                       <iframe
-                        className="w-full h-full rounded-xl object-contain sm:object-cover"
+                        className="w-full h-full rounded-xl object-contain"
                         style={{ aspectRatio: '16/9' }}
                         src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&mute=0&loop=1&playlist=${YOUTUBE_ID}&playsinline=1&controls=1&rel=0`}
                         title="J Curve by Avi Intro"
@@ -269,7 +272,7 @@ const Hero = () => {
                     </div>
                   ) : (
                     <img
-                      src={`https://img.youtube.com/vi/${YOUTUBE_ID}/hqdefault.jpg`}
+                      src="/Screenshot 2025-06-25 at 12.18.35 PM.png"
                       alt="Video thumbnail"
                       className="w-full h-full rounded-xl object-contain sm:object-cover"
                       style={{
