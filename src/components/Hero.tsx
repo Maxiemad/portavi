@@ -22,6 +22,7 @@ const Hero = () => {
   const [audioEnabled, setAudioEnabled] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const playerRef = useRef<any>(null);
+  const [play, setPlay] = useState(false);
 
   useEffect(() => {
     // Animate tagline with split text effect
@@ -173,9 +174,9 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-7xl mx-auto">
           {/* Left Side - Text */}
           <div className="space-y-6">
-            <h1 className="font-bold text-xl sm:text-4xl md:text-6xl leading-tight">
-              Content that Converts<br />
-              Growth that Sticks
+            <h1 className="font-bold text-2xl sm:text-4xl md:text-6xl leading-tight text-balance">
+              <span className="block">Content that Converts</span>
+              <span className="block">Growth that Sticks</span>
             </h1>
             <motion.p 
               className="text-xl md:text-2xl text-[#e4ded7]/80 max-w-2xl"
@@ -225,25 +226,62 @@ const Hero = () => {
                   minHeight: '400px',
                 }}
               >
-                {/* Fallback for older Safari */}
                 <div style={{
                   position: 'relative',
                   width: '100%',
                   paddingBottom: '56.25%', // 16:9
                   height: 0,
                 }}>
-                  <div
-                    id="ytplayer"
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: '16px',
-                      overflow: 'hidden',
-                    }}
-                  ></div>
+                  {!play && (
+                    <button
+                      onClick={() => setPlay(true)}
+                      className="absolute inset-0 flex items-center justify-center w-full h-full z-20 bg-black/40 rounded-2xl focus:outline-none"
+                      style={{ border: 'none', cursor: 'pointer' }}
+                      aria-label="Play video"
+                    >
+                      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="40" r="40" fill="white" fillOpacity="0.7" />
+                        <polygon points="32,24 60,40 32,56" fill="#1a1a2e" />
+                      </svg>
+                    </button>
+                  )}
+                  {play ? (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: '16px',
+                        overflow: 'hidden',
+                      }}
+                    >
+                      <iframe
+                        className="w-full h-full rounded-xl object-cover"
+                        style={{ aspectRatio: '16/9' }}
+                        src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&mute=0&loop=1&playlist=${YOUTUBE_ID}&playsinline=1&controls=1&rel=0`}
+                        title="J Curve by Avi Intro"
+                        frameBorder="0"
+                        allow="autoplay; encrypted-media"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  ) : (
+                    <img
+                      src={`https://img.youtube.com/vi/${YOUTUBE_ID}/hqdefault.jpg`}
+                      alt="Video thumbnail"
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        borderRadius: '16px',
+                      }}
+                    />
+                  )}
                 </div>
               </div>
             </div>
