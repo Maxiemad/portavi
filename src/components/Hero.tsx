@@ -211,27 +211,20 @@ const Hero = () => {
           </div>
 
           {/* Right Side - Video */}
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center w-full">
             <div 
               ref={videoRef}
-              className="relative group"
+              className="relative group w-full"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
               <div
-                className="relative bg-[#1a1a2e] rounded-2xl p-2 sm:p-4 md:p-8 backdrop-blur-sm border border-[#e4ded7]/20 flex justify-center items-center mx-auto shadow-xl"
-                style={{
-                  maxWidth: '1200px',
-                  width: '100%',
-                  aspectRatio: '16/9',
-                  minHeight: '400px',
-                }}
+                className="relative w-full max-w-3xl mx-auto"
               >
                 <div
-                  className="w-full h-0"
+                  className="video-wrapper w-full rounded-2xl overflow-hidden"
                   style={{
                     position: 'relative',
-                    width: '100%',
-                    paddingBottom: '56.25%', // 16:9
+                    paddingTop: '56.25%', // 16:9
                     height: 0,
                   }}
                 >
@@ -249,40 +242,21 @@ const Hero = () => {
                     </button>
                   )}
                   {play ? (
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        borderRadius: '16px',
-                        overflow: 'hidden',
-                      }}
-                    >
-                      <iframe
-                        className="w-full h-full rounded-xl object-contain"
-                        style={{ aspectRatio: '16/9' }}
-                        src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&mute=0&loop=1&playlist=${YOUTUBE_ID}&playsinline=1&controls=1&rel=0`}
-                        title="J Curve by Avi Intro"
-                        frameBorder="0"
-                        allow="autoplay; encrypted-media"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
+                    <iframe
+                      className="absolute top-0 left-0 w-full h-full rounded-xl"
+                      style={{ objectFit: 'contain' }}
+                      src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&mute=0&loop=1&playlist=${YOUTUBE_ID}&playsinline=1&controls=1&rel=0`}
+                      title="J Curve by Avi Intro"
+                      frameBorder="0"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    ></iframe>
                   ) : (
                     <img
                       src="/Screenshot 2025-06-25 at 12.18.35 PM.png"
                       alt="Video thumbnail"
-                      className="w-full h-full rounded-xl object-contain sm:object-cover"
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        borderRadius: '16px',
-                      }}
+                      className="absolute top-0 left-0 w-full h-full rounded-xl object-contain sm:object-cover"
+                      style={{ borderRadius: '16px' }}
                     />
                   )}
                 </div>
