@@ -258,7 +258,7 @@ const Hero = () => {
                       }}
                     >
                       <iframe
-                        className="w-full h-full rounded-xl object-cover"
+                        className="w-full h-full rounded-xl object-contain sm:object-cover"
                         style={{ aspectRatio: '16/9' }}
                         src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&mute=0&loop=1&playlist=${YOUTUBE_ID}&playsinline=1&controls=1&rel=0`}
                         title="J Curve by Avi Intro"
@@ -271,13 +271,13 @@ const Hero = () => {
                     <img
                       src={`https://img.youtube.com/vi/${YOUTUBE_ID}/hqdefault.jpg`}
                       alt="Video thumbnail"
+                      className="w-full h-full rounded-xl object-contain sm:object-cover"
                       style={{
                         position: 'absolute',
                         top: 0,
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        objectFit: 'cover',
                         borderRadius: '16px',
                       }}
                     />
